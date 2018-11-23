@@ -21,6 +21,11 @@
   </properties>
   <body>
 
+  <release version="3.2.2-TT.1" date="2015-11-18" description="This is a bugfix release.">
+    <action issue="COLLECTIONS-701" dev="ggregory" type="fix" due-to="Don Jeba">
+      StackOverflowError in SetUniqueList.add() when it receives itself.
+    </action>
+  </release>
   <release version="3.2.2" date="2015-11-18" description="This is a bugfix release.">
     <action issue="COLLECTIONS-580" dev="tn" type="update">
       Serialization support for unsafe classes in the functor package is disabled
