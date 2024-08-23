@@ -27,7 +27,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>commons-collections</groupId>
   <artifactId>commons-collections</artifactId>
-  <version>3.2.2</version>
+  <version>3.2.2-TT.1-SNAPSHOT</version>
   <name>Apache Commons Collections</name>
 
   <inceptionYear>2001</inceptionYear>
@@ -41,9 +41,10 @@
   </issueManagement>
 
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/commons/proper/collections/trunk</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/commons/proper/collections/trunk</developerConnection>
-    <url>http://svn.apache.org/viewvc/commons/proper/collections/trunk</url>
+    <connection>scm:git:git@github.com:tomitribe/commons-collections.git</connection>
+    <developerConnection>scm:git:git@github.com:tomitribe/commons-collections.git</developerConnection>
+    <url>scm:git:git@github.com:tomitribe/commons-collections.git</url>
+    <tag>HEAD</tag>
   </scm>
 
   <developers>
@@ -386,7 +387,21 @@
     <commons.binary.suffix>-bin</commons.binary.suffix>
     <commons.jira.id>COLLECTIONS</commons.jira.id>
     <commons.jira.pid>12310465</commons.jira.pid>
-  </properties> 
+  </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>tomitribe.releases.https</id>
+      <name>Tomitribe Release Distribution Repository</name>
+      <url>https://repository.tomitribe.com/service/local/staging/deploy/maven2</url>
+    </repository>
+
+    <snapshotRepository>
+      <id>tomitribe.snapshots.https</id>
+      <name>Tomitribe Development Snapshot Repository</name>
+      <url>https://repository.tomitribe.com/content/repositories/snapshots-tomitribe</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <build>
     <sourceDirectory>src/java</sourceDirectory>
