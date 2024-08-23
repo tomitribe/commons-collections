@@ -514,4 +514,37 @@ public class TestSetUniqueList extends AbstractTestList {
 //        writeExternalFormToDisk((java.io.Serializable) collection, "D:/dev/collections/data/test/SetUniqueList.fullCollection.version3.1.obj");
 //    }
 
+    public void testCollections701() {
+        final SetUniqueList uniqueList = new SetUniqueList(new ArrayList(), new HashSet());
+        final Integer obj1 = new Integer(1);
+        final Integer obj2 = new Integer(2);
+        uniqueList.add(obj1);
+        uniqueList.add(obj2);
+        assertEquals(2, uniqueList.size());
+        uniqueList.add(uniqueList);
+        assertEquals(3, uniqueList.size());
+        final List list = new LinkedList();
+        final SetUniqueList decoratedList = SetUniqueList.decorate(list);
+        final String s1 = "Apple";
+        final String s2 = "Lemon";
+        final String s3 = "Orange";
+        final String s4 = "Strawberry";
+        decoratedList.add(s1);
+        decoratedList.add(s2);
+        decoratedList.add(s3);
+        assertEquals(3, decoratedList.size());
+        decoratedList.set(1, s4);
+        assertEquals(3, decoratedList.size());
+        decoratedList.add(decoratedList);
+        assertEquals(4, decoratedList.size());
+    }
+
+    public void testSetUniqueList() {
+        final List source = new ArrayList();
+        final List list = SetUniqueList.decorate(source);
+        list.add(list);
+        assertEquals(1, list.size());
+        assertEquals(list, list.get(0));
+    }
+
 }
